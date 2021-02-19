@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+		<meta charset="utf-8">
+		<meta name="keywords" content="2d terrain creator tool documentation unity 3d asset plugin">
+		<meta name="description" 
+		      content="2d Terrain Creator documentation web page for unity 3d engine.">
+		<meta name="Author" content="Walon Cab">
+
+		<title>2D Terrain Creator Documentation | 2D Terrain Creator Unity Asset</title>
+
+        <link rel="stylesheet" href="css/body.css">
+        <link rel="stylesheet" href="css/table.css">
+        <link rel="stylesheet" href="css/form.css">
+
+    </head>
+
+    <body>
+
+        <div class="content">
+
+            <iframe src="https://assetstore.unity.com/linkmaker/embed/package/165538/widget-wide?aid=1100ldXrT" 
+                    style="width:600px; height:130px; border:0px;">
+            </iframe>
+            
+            <h2>Table of Contents</h2>
+
+            <ol>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#spline">Spline</a></li>
+                <li><a href="#mesh">Mesh</a></li>
+                <li><a href="#prefab">Prefabs</a></li>
+            </ol>
+
+            <section id="intro">
+
+                <h2>Create</h2>
+
+                <p>
+                    In order to create a new 2D Spline -> Go to the unity toolbar -> S-Lines/2D Spline.
+                    A new game object will be created with their correspondent scripts.
+                </p>
+
+                <p>
+                    The tool is design withe spline as the core component. 
+                    This means that for you to create the mesh or add prefabs, 
+                    these must be extenden from the spline.
+                </p>
+
+            </section>
+
+            <section id="spline">
+
+                <h2>Spline</h2>
+
+                <p>
+                The spline is the core element of the tool. 
+                For better user expirence there are some key features that ensure its 
+                proper behaviour in a 2.5D enviroment.
+                </p>
+
+                <p>
+                    In order to see the full behaviour go to the 
+                    <a href="https://waloncab.github.io/spline-tool-doc/">Spline Tool Documentation</a>
+                </p>
+
+            </section>
+
+            <section id="mesh">
+
+                <h2>Mesh</h2>
+
+                <p>
+                    There are quite a few thins that can be done with the meshes. 
+                    These are the types of mesh you can create right now:
+                </p>
+
+                <h3>Base</h3>
+
+                It creates a shape that goes below the spline into the the floor (0,0,0).
+                It is the one you're porbabily going to use the most since it conforms
+                the ground base.
+
+                <h3>Cap</h3>
+
+                In case you want you to use it, you can select from diferent typs of styles
+                to customize the surface of the terrain.
+
+                <table>
+                    <tr>
+                        <th>Sytle</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>Picos</td>
+                        <td>Select the first node</td>
+                    </tr>
+                    <tr>
+                        <td>Waves</td>
+                        <td>Select the last node</td>
+                    </tr>
+                    <tr>
+                        <td>Random</td>
+                        <td>Reset the spline</td>
+                    </tr>
+                </table>
+
+                <h3>Box</h3>
+
+                A simple square shape that may be useful for creating structures 
+                such as bridges.
+
+            </section>
+
+            <section id="prefab">
+
+                <h2>Prefab</h2>
+
+                <p>
+                    To keep it as simple as posible (and as customizable as needed)
+                    the way to create prefabs is by using a traversal component and attach the 
+                    gameObject as a child.
+                </p>
+
+                <p>
+                    This way you can create any offset needed with the unity transform tool.
+                    Also any complex hirarchy can be achived. There is no cool interface,
+                    but is the only way I can assure there are no limitations for the user
+                    when it comes to create a complex prefab. 
+                    Exmp: creating a coin that needs an offset to look hovering from the ground.
+                </p>
+
+            </section>
+
+    </body>
+
+</html>

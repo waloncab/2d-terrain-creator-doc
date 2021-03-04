@@ -22,11 +22,11 @@
 
         <div class="content">
 
-            <iframe src="https://assetstore.unity.com/linkmaker/embed/package/165538/widget-wide?aid=1100ldXrT" 
+            <iframe src="https://assetstore.unity.com/linkmaker/embed/package/52921/widget-wide?aid=1100ldXrT" 
                     style="width:600px; height:130px; border:0px;">
             </iframe>
             
-            <h2>Table of Contents</h2>
+            <h1>Table of Contents</h1>
 
             <ol>
                 <li><a href="#intro">Introduction</a></li>
@@ -40,14 +40,15 @@
                 <h2>Create</h2>
 
                 <p>
-                    In order to create a new 2D Spline -> Go to the unity toolbar -> S-Lines/2D Spline.
-                    A new game object will be created with their correspondent scripts.
+                    In order to create your first terrain you need to setp up the tool.
+                    Go to S-Lines in the menubar and select S-Lines/Load, then wait a few seconds for the project to configure.
                 </p>
 
                 <p>
-                    The tool is design withe spline as the core component. 
-                    This means that for you to create the mesh or add prefabs, 
-                    these must be extenden from the spline.
+                    Now, if you reaload de S-Lines menubar you can see the the spline available.
+                    Create the 2D spline and start desinging the shape you want
+                    The tool is design with the spline as the core component. 
+                    This means that for you to create the mesh or add prefabs, these must be extenden from the spline.
                 </p>
 
             </section>
@@ -57,10 +58,63 @@
                 <h2>Spline</h2>
 
                 <p>
-                The spline is the core element of the tool. 
-                For better user expirence there are some key features that ensure its 
-                proper behaviour in a 2.5D enviroment.
+                    The spline is the core element of the tool. 
+                    For better user expirence there are some key features that ensure its 
+                    proper behaviour in a 2.5D enviroment. Only Forward movement available to ensure the mesh generates properly.                    
                 </p>
+
+                <p>
+                    There are different configurations for the nodes placment so you can achive any desired shape. 
+                    The following list shows some of them.
+                </p>
+
+
+                <table>
+                    <tr>
+                        <th>Node</th>
+                        <th>Behaviour</th>
+                    </tr>
+                    <tr>
+                        <td>Free</td>
+                        <td>Leaf nodes can be drag anywhere</td>
+                    </tr>
+                    <tr>
+                        <td>Aligned</td>
+                        <td>Leaf nodes are enforceb by their tangents</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mirrored</td>
+                        <td>Leaf nodes are enforced by tangents and same distance to center</td>
+                    </tr>
+
+                    <tr>
+                        <td>Poly</td>
+                        <td>Leaf nodes disappear to make polygonal lines</td>
+                    </tr>
+                </table>
+
+                <p>
+                    As said before, in order to draw the mesh or to add prefabs to the terrain, these components must be extended 
+                    from the spline. Select the requiered one in the extension menu and then click on "extend". 
+                    By defautl each component is added to the scene as a root element, you can readjust in later to fit 
+                    the hirarchy configuration that best fits you.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Extension</th>
+                        <th>Behaviour</th>
+                    </tr>
+                    <tr>
+                        <td><a href="#traverse">Traverse</td>
+                        <td>Traverse the spline and keep GameObjects at a fixed state in the spline</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#mesh">Mesh</td>
+                        <td>Render different meshes along the spline</td>
+                    </tr>
+                </table> 
 
                 <p>
                     In order to see the full behaviour go to the 
@@ -74,44 +128,91 @@
                 <h2>Mesh</h2>
 
                 <p>
-                    There are quite a few thins that can be done with the meshes. 
-                    These are the types of mesh you can create right now:
+                    Since the mesh is the most important feature in this tool, there are quite a bunch 
+                    of things that you can modify. The Line_Mesh gather the common behaviour of the 
+                    mesh, which is generated along the line, in this case the spline.
                 </p>
 
-                <h3>Base</h3>
+                <p>
+                    Check the full documentation for the Line Mesh component 
+                    <a href="https://waloncab.github.io/spline-tool-doc/#mesh">here</a>
+                    Then use the extension behaviour to generate the different terrain shapes.
+                </p>
 
-                It creates a shape that goes below the spline into the the floor (0,0,0).
-                It is the one you're porbabily going to use the most since it conforms
-                the ground base.
 
-                <h3>Cap</h3>
+                    <h3>Extend</h3>
 
-                In case you want you to use it, you can select from diferent typs of styles
-                to customize the surface of the terrain.
+                    <p>
+                        The way you select a concrete shape is by extending the Line Mesh component. Once selected click on "Extend",
+                        another script is added with concrete parameters for the selected mesh.
+                    </p>
+    
+                    <ol>
+                        <li><a href="#shape_base">Base</a></li>
+                        <li><a href="#shape_surface">Surface</a></li>
+                    </ol>
 
-                <table>
-                    <tr>
-                        <th>Sytle</th>
-                        <th>Description</th>
-                    </tr>
-                    <tr>
-                        <td>Picos</td>
-                        <td>Select the first node</td>
-                    </tr>
-                    <tr>
-                        <td>Waves</td>
-                        <td>Select the last node</td>
-                    </tr>
-                    <tr>
-                        <td>Random</td>
-                        <td>Reset the spline</td>
-                    </tr>
-                </table>
 
-                <h3>Box</h3>
+                    <h4>Base</h4>
 
-                A simple square shape that may be useful for creating structures 
-                such as bridges.
+                    <p>
+                        It creates a shape that goes below the spline into the the floor (0,0,0).
+                        It is the one you're porbabily going to use the most since it conforms
+                        the ground base.
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Width</td>
+                            <td>The width of the rect that conforms the base</td>
+                        </tr>
+                    </table>
+
+                    <h4>Surface</h4>
+
+                    <p>
+                        In case you want you to use it, you can select from diferent typs of styles
+                        to customize the surface of the terrain.
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Width</td>
+                            <td>The width of the rect that conforms the surface</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <th>Sytle</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Rocky</td>
+                            <td>To achive a random rock cut style</td>
+                        </tr>
+                        <tr>
+                            <td>Wave</td>
+                            <td>Select the last node</td>
+                        </tr>
+                        <tr>
+                            <td>Random</td>
+                            <td>Reset the spline</td>
+                        </tr>
+                    </table>
+
+                    <h3>Box</h3>
+
+                    A simple square shape that may be useful for creating structures 
+                    such as bridges.
 
             </section>
 
@@ -123,6 +224,34 @@
                     To keep it as simple as posible (and as customizable as needed)
                     the way to create prefabs is by using a traversal component and attach the 
                     gameObject as a child.
+                </p>
+
+                <p>
+                    Check the full documentation for Traversal component 
+                    <a href="https://waloncab.github.io/spline-tool-doc/#traverse">here</a>.
+                    The psoibilities are endless, attach your prefab gameObjects to the Traversal
+                    and create the result that is needed. Use options such as flipping the direction
+                    or the normal.
+                </p>
+
+                <p>
+                    This way you can create any offset needed with the unity transform tool.
+                    Also any complex hirarchy can be achived. There is no cool interface,
+                    but is the only way I can assure there are no limitations for the user
+                    when it comes to create a complex prefab. 
+                    Exmp: creating a coin that needs an offset to look hovering from the ground.
+                </p>
+
+            </section>
+
+            <section id="platforms">
+
+                <h2>Platforms</h2>
+
+                <p>
+                    It is very straightforward to create different platforms with different styles.
+                    They can be easily connected enforcing the splines. Also if gaps is what you want 
+                    the 
                 </p>
 
                 <p>
